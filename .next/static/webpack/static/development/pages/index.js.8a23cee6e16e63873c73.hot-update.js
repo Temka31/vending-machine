@@ -96,7 +96,7 @@ function Surrender(_ref) {
     }
   }, Object.entries(surrender).map(function (item) {
     if (item[1] > 0) {
-      return item[0] + "R: " + item[1] + " coin \n";
+      return item[0] + " R: " + item[1] + " coin \n";
     }
   })), __jsx("div", {
     style: styles.outputItem,
@@ -133,4 +133,4 @@ function Surrender(_ref) {
 /***/ })
 
 })
-//# sourceMappingURL=index.js.d6cbd0f3e9c2ba0ded7f.hot-update.js.map
+//# sourceMappingURL=index.js.8a23cee6e16e63873c73.hot-update.js.map

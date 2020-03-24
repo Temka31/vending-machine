@@ -46,9 +46,10 @@ export default function Surrender({ surrender, item }) {
       <div style={styles.row}>
         <div style={styles.outputItem}>
         {Object.entries(surrender).map(item =>{
+          console.log(item[0])
           if (item[1]>0){
             
-            return(item[0]+"R: " + item[1] + " coin \n" )
+            return(item[0]+" R: " + item[1] + " coin " )
           }
         }
           )}

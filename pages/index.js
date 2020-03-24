@@ -42,13 +42,13 @@ export default function Index() {
   const purchased = selected => {
     if (items[selected - 1].price <= deposit) {
       setpurchasedItem(items[selected - 1]);
-      surrender.ten = ~~((deposit - items[selected - 1].price) / 10);
-      surrender.five = ~~(((deposit - items[selected - 1].price) % 10) / 5);
-      surrender.two = ~~(
+      surrender[10] = ~~((deposit - items[selected - 1].price) / 10);
+      surrender[5] = ~~(((deposit - items[selected - 1].price) % 10) / 5);
+      surrender[2] = ~~(
         (((deposit - items[selected - 1].price) % 10) % 5) /
         2
       );
-      surrender.one = ~~(
+      surrender[1] = ~~(
         ((((deposit - items[selected - 1].price) % 10) % 5) % 2) /
         1
       );

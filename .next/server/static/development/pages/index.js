@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -585,36 +585,38 @@ function Surrender({
       columnNumber: 9
     }
   }, Object.entries(surrender).map(item => {
+    console.log(item[0]);
+
     if (item[1] > 0) {
-      return item[0] + "R: " + item[1] + " coin \n";
+      return item[0] + " R: " + item[1] + " coin ";
     }
   })), __jsx("div", {
     style: styles.outputItem,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
+      lineNumber: 59,
       columnNumber: 9
     }
   }, __jsx("span", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
+      lineNumber: 60,
       columnNumber: 11
     }
   }, item.name, __jsx("br", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62,
+      lineNumber: 63,
       columnNumber: 13
     }
   }), item.type, __jsx("br", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66,
+      lineNumber: 67,
       columnNumber: 13
     }
   }), item.price))));
@@ -714,10 +716,10 @@ function Index() {
   const purchased = selected => {
     if (items[selected - 1].price <= deposit) {
       setpurchasedItem(items[selected - 1]);
-      surrender.ten = ~~((deposit - items[selected - 1].price) / 10);
-      surrender.five = ~~((deposit - items[selected - 1].price) % 10 / 5);
-      surrender.two = ~~((deposit - items[selected - 1].price) % 10 % 5 / 2);
-      surrender.one = ~~((deposit - items[selected - 1].price) % 10 % 5 % 2 / 1);
+      surrender[10] = ~~((deposit - items[selected - 1].price) / 10);
+      surrender[5] = ~~((deposit - items[selected - 1].price) % 10 / 5);
+      surrender[2] = ~~((deposit - items[selected - 1].price) % 10 % 5 / 2);
+      surrender[1] = ~~((deposit - items[selected - 1].price) % 10 % 5 % 2 / 1);
     }
   };
 
@@ -778,7 +780,7 @@ function Index() {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
