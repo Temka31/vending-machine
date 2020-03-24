@@ -98,35 +98,33 @@ function Surrender(_ref) {
     if (item[1] > 0) {
       return item[0] + "R: " + item[1] + " coin \n";
     }
-
-    console.log(item[0]);
   })), __jsx("div", {
     style: styles.outputItem,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
+      lineNumber: 58,
       columnNumber: 9
     }
   }, __jsx("span", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
+      lineNumber: 59,
       columnNumber: 11
     }
   }, item.name, __jsx("br", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63,
+      lineNumber: 62,
       columnNumber: 13
     }
   }), item.type, __jsx("br", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67,
+      lineNumber: 66,
       columnNumber: 13
     }
   }), item.price))));
@@ -135,4 +133,4 @@ function Surrender(_ref) {
 /***/ })
 
 })
-//# sourceMappingURL=index.js.831d67d167cbb7da499b.hot-update.js.map
+//# sourceMappingURL=index.js.d6cbd0f3e9c2ba0ded7f.hot-update.js.map

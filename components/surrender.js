@@ -50,7 +50,6 @@ export default function Surrender({ surrender, item }) {
             
             return(item[0]+"R: " + item[1] + " coin \n" )
           }
-          console.log(item[0])
         }
           )}
          
