@@ -24,7 +24,7 @@ const styles = {
     overflowY: "scroll"
   }
 };
-const surrender = { ten: 0, five: 0, two: 0, one: 0 };
+const surrender = { 10: 0, 5: 0, 2: 0, 1: 0 };
 export default function Index() {
   const items = [
     { name: "Cola", type: "Cold drink", price: 130 },

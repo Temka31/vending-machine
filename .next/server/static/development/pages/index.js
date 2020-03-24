@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -584,33 +584,39 @@ function Surrender({
       lineNumber: 47,
       columnNumber: 9
     }
-  }, surrender.ten > 0 ? "10 R:" + surrender.ten + "coin" : __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null)), __jsx("div", {
+  }, Object.entries(surrender).map(item => {
+    if (item[1] > 0) {
+      return item[0] + "R: " + item[1] + " coin \n";
+    }
+
+    console.log(item[0]);
+  })), __jsx("div", {
     style: styles.outputItem,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
+      lineNumber: 59,
       columnNumber: 9
     }
   }, __jsx("span", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
+      lineNumber: 60,
       columnNumber: 11
     }
   }, item.name, __jsx("br", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55,
+      lineNumber: 63,
       columnNumber: 13
     }
   }), item.type, __jsx("br", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
+      lineNumber: 67,
       columnNumber: 13
     }
   }), item.price))));
@@ -663,10 +669,10 @@ const styles = {
   }
 };
 const surrender = {
-  ten: 0,
-  five: 0,
-  two: 0,
-  one: 0
+  10: 0,
+  5: 0,
+  2: 0,
+  1: 0
 };
 function Index() {
   const items = [{
@@ -774,7 +780,7 @@ function Index() {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
