@@ -71,31 +71,31 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
-      columnNumber: 7
+      lineNumber: 48,
+      columnNumber: 5
     }
   }, __jsx("div", {
     style: styles.product,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
-      columnNumber: 9
+      lineNumber: 49,
+      columnNumber: 7
     }
   }, __jsx("span", {
     style: styles.name,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55,
-      columnNumber: 8
+      lineNumber: 50,
+      columnNumber: 9
     }
   }, item.name), __jsx("span", {
     style: styles.desc,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
+      lineNumber: 51,
       columnNumber: 9
     }
   }, item.type), __jsx("span", {
@@ -103,7 +103,7 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 52,
       columnNumber: 9
     }
   }, item.price), __jsx("span", {
@@ -111,7 +111,7 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64,
+      lineNumber: 53,
       columnNumber: 9
     }
   }, number)));
@@ -201,16 +201,21 @@ function ControlPanel(_ref) {
       setDeposit(dep);
       setMessage("Inserted money:" + dep + "R");
       setMessageTwo("Choose product...");
-      event.preventDefault();
     } else {
       setMessage("Unknown banknote!");
-      event.preventDefault();
     }
+
+    event.preventDefault();
   };
 
   var handleSubmitSelected = function handleSubmitSelected(event) {
-    purchased(sel);
-    setMessageTwo("Success!");
+    if (sel < 8 && sel > 0) {
+      purchased(sel);
+      setMessageTwo("Success!");
+    } else {
+      setMessageTwo("Enter the correct number!");
+    }
+
     event.preventDefault();
   };
 
@@ -227,7 +232,7 @@ function ControlPanel(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89,
+      lineNumber: 81,
       columnNumber: 5
     }
   }, __jsx("form", {
@@ -236,7 +241,7 @@ function ControlPanel(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91,
+      lineNumber: 82,
       columnNumber: 7
     }
   }, __jsx("label", {
@@ -244,15 +249,15 @@ function ControlPanel(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92,
+      lineNumber: 83,
       columnNumber: 9
     }
   }, message), __jsx("br", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95,
-      columnNumber: 11
+      lineNumber: 84,
+      columnNumber: 9
     }
   }), __jsx("input", {
     style: styles.finput,
@@ -262,40 +267,40 @@ function ControlPanel(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96,
-      columnNumber: 11
+      lineNumber: 85,
+      columnNumber: 9
     }
   }), __jsx("span", {
     style: styles.desc,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99,
-      columnNumber: 10
+      lineNumber: 92,
+      columnNumber: 9
     }
-  }, " Available banknotes: 50, 100, 200, 500 or 1000 R. The machine gives change in 1, 2, 5 and 10 R coins.")), __jsx("form", {
+  }, " ", "Available banknotes: 50, 100, 200, 500 or 1000 R. The machine gives change in 1, 2, 5 and 10 R coins.")), __jsx("form", {
     style: styles.form,
     onSubmit: handleSubmitSelected,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105,
-      columnNumber: 1
+      lineNumber: 99,
+      columnNumber: 7
     }
   }, __jsx("label", {
     style: styles.label,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106,
+      lineNumber: 100,
       columnNumber: 9
     }
   }, messageTwo), __jsx("br", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109,
-      columnNumber: 10
+      lineNumber: 101,
+      columnNumber: 9
     }
   }), __jsx("input", {
     style: styles.finput,
@@ -305,8 +310,8 @@ function ControlPanel(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 110,
-      columnNumber: 11
+      lineNumber: 102,
+      columnNumber: 9
     }
   })));
 }
@@ -369,7 +374,7 @@ function ShowCace(_ref) {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 28,
-      columnNumber: 7
+      columnNumber: 5
     }
   }, __jsx("div", {
     style: styles.product_list,
@@ -377,7 +382,7 @@ function ShowCace(_ref) {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 29,
-      columnNumber: 9
+      columnNumber: 7
     }
   }, items.map(function (item) {
     return __jsx(_card__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -388,8 +393,8 @@ function ShowCace(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 30,
-        columnNumber: 27
+        lineNumber: 31,
+        columnNumber: 11
       }
     });
   })));
@@ -457,7 +462,7 @@ function Surrender(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
+      lineNumber: 42,
       columnNumber: 5
     }
   }, __jsx("div", {
@@ -465,60 +470,60 @@ function Surrender(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
-      columnNumber: 5
+      lineNumber: 43,
+      columnNumber: 7
     }
   }, __jsx("span", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
-      columnNumber: 5
+      lineNumber: 44,
+      columnNumber: 9
     }
   }, "\u0412\u043E\u0437\u044C\u043C\u0438\u0442\u0435 \u0441\u0432\u043E\u0439 \u0442\u043E\u0432\u0430\u0440")), __jsx("div", {
     style: styles.row,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
-      columnNumber: 5
+      lineNumber: 46,
+      columnNumber: 7
     }
   }, __jsx("div", {
     style: styles.outputItem,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49,
-      columnNumber: 1
+      lineNumber: 47,
+      columnNumber: 9
     }
   }, surrender.ten > 0 ? "10 R:" + surrender.ten + "coin" : __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null)), __jsx("div", {
     style: styles.outputItem,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
-      columnNumber: 1
+      lineNumber: 51,
+      columnNumber: 9
     }
   }, __jsx("span", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
-      columnNumber: 1
+      lineNumber: 52,
+      columnNumber: 11
     }
   }, item.name, __jsx("br", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57,
-      columnNumber: 7
+      lineNumber: 55,
+      columnNumber: 13
     }
   }), item.type, __jsx("br", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
-      columnNumber: 7
+      lineNumber: 59,
+      columnNumber: 13
     }
   }), item.price))));
 }
@@ -691,7 +696,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
+      lineNumber: 59,
       columnNumber: 5
     }
   }, __jsx("div", {
@@ -699,7 +704,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
+      lineNumber: 60,
       columnNumber: 7
     }
   }, __jsx(_components_showcase__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -708,15 +713,15 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
-      columnNumber: 7
+      lineNumber: 61,
+      columnNumber: 9
     }
   })), __jsx("div", {
     style: styles.panel,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62,
+      lineNumber: 63,
       columnNumber: 7
     }
   }, __jsx(_components_controlpanel__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -726,7 +731,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63,
+      lineNumber: 64,
       columnNumber: 9
     }
   }), __jsx(_components_surrender__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -735,7 +740,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
+      lineNumber: 70,
       columnNumber: 9
     }
   })));
@@ -743,7 +748,7 @@ function Index() {
 
 /***/ }),
 
-/***/ 1:
+/***/ 2:
 /*!*************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Ftema%2Fmachine%2Fpages%2Findex.js ***!
   \*************************************************************************************************************/
@@ -766,5 +771,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map
