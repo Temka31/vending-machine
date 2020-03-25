@@ -6,8 +6,6 @@ import Surrender from "../components/surrender";
 
 const styles = {
   page: {
-    display: "-webkit-box",
-    display: "-ms-flexbox",
     display: "flex",
     height: "100vh",
     fontSize: "1.125rem"
