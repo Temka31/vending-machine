@@ -96,35 +96,35 @@ function Surrender(_ref) {
     }
   }, Object.entries(surrender).map(function (item) {
     if (item[1] > 0) {
-      return item[0] + " R: " + item[1] + " coin \n";
+      return item[0] + " R: " + item[1] + " coin ";
     }
   })), __jsx("div", {
     style: styles.outputItem,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
+      lineNumber: 59,
       columnNumber: 9
     }
   }, __jsx("span", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
+      lineNumber: 60,
       columnNumber: 11
     }
   }, item.name, __jsx("br", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62,
+      lineNumber: 63,
       columnNumber: 13
     }
   }), item.type, __jsx("br", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66,
+      lineNumber: 67,
       columnNumber: 13
     }
   }), item.price))));
@@ -133,4 +133,4 @@ function Surrender(_ref) {
 /***/ })
 
 })
-//# sourceMappingURL=index.js.8a23cee6e16e63873c73.hot-update.js.map
+//# sourceMappingURL=index.js.a5b04b5954b765fe2498.hot-update.js.map

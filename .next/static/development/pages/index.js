@@ -178,6 +178,8 @@ var styles = {
 function ControlPanel(_ref) {
   var setDeposit = _ref.setDeposit,
       setSelected = _ref.setSelected,
+      deposit = _ref.deposit,
+      items = _ref.items,
       purchased = _ref.purchased;
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(""),
@@ -209,14 +211,18 @@ function ControlPanel(_ref) {
   };
 
   var handleSubmitSelected = function handleSubmitSelected(event) {
-    if (sel < 8 && sel > 0) {
+    event.preventDefault();
+
+    if (sel < 8 && sel > 0 && deposit >= items[sel - 1].price) {
       purchased(sel);
       setMessageTwo("Success!");
     } else {
-      setMessageTwo("Enter the correct number!");
+      if (sel < 8 && sel > 0) {
+        setMessageTwo("Не хватает денег!");
+      } else {
+        setMessageTwo("Enter the correct number!");
+      }
     }
-
-    event.preventDefault();
   };
 
   var handleChangeDep = function handleChangeDep(event) {
@@ -232,7 +238,7 @@ function ControlPanel(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81,
+      lineNumber: 84,
       columnNumber: 5
     }
   }, __jsx("form", {
@@ -241,7 +247,7 @@ function ControlPanel(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82,
+      lineNumber: 85,
       columnNumber: 7
     }
   }, __jsx("label", {
@@ -249,14 +255,14 @@ function ControlPanel(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83,
+      lineNumber: 86,
       columnNumber: 9
     }
   }, message), __jsx("br", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84,
+      lineNumber: 87,
       columnNumber: 9
     }
   }), __jsx("input", {
@@ -267,7 +273,7 @@ function ControlPanel(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85,
+      lineNumber: 88,
       columnNumber: 9
     }
   }), __jsx("span", {
@@ -275,7 +281,7 @@ function ControlPanel(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92,
+      lineNumber: 95,
       columnNumber: 9
     }
   }, " ", "Available banknotes: 50, 100, 200, 500 or 1000 R. The machine gives change in 1, 2, 5 and 10 R coins.")), __jsx("form", {
@@ -284,7 +290,7 @@ function ControlPanel(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99,
+      lineNumber: 102,
       columnNumber: 7
     }
   }, __jsx("label", {
@@ -292,17 +298,18 @@ function ControlPanel(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100,
+      lineNumber: 103,
       columnNumber: 9
     }
   }, messageTwo), __jsx("br", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101,
+      lineNumber: 104,
       columnNumber: 9
     }
   }), __jsx("input", {
+    disabled: deposit > 0 ? "" : "disabled",
     style: styles.finput,
     type: "text",
     value: sel,
@@ -310,7 +317,7 @@ function ControlPanel(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102,
+      lineNumber: 105,
       columnNumber: 9
     }
   })));
@@ -497,8 +504,6 @@ function Surrender(_ref) {
       columnNumber: 9
     }
   }, Object.entries(surrender).map(function (item) {
-    console.log(item[0]);
-
     if (item[1] > 0) {
       return item[0] + " R: " + item[1] + " coin ";
     }
@@ -688,13 +693,12 @@ function Index() {
       setpurchasedItem = _useState2[1];
 
   var purchased = function purchased(selected) {
-    if (items[selected - 1].price <= deposit) {
-      setpurchasedItem(items[selected - 1]);
-      surrender[10] = ~~((deposit - items[selected - 1].price) / 10);
-      surrender[5] = ~~((deposit - items[selected - 1].price) % 10 / 5);
-      surrender[2] = ~~((deposit - items[selected - 1].price) % 10 % 5 / 2);
-      surrender[1] = ~~((deposit - items[selected - 1].price) % 10 % 5 % 2 / 1);
-    }
+    // if (items[selected - 1].price <= deposit) {
+    setpurchasedItem(items[selected - 1]);
+    surrender[10] = ~~((deposit - items[selected - 1].price) / 10);
+    surrender[5] = ~~((deposit - items[selected - 1].price) % 10 / 5);
+    surrender[2] = ~~((deposit - items[selected - 1].price) % 10 % 5 / 2);
+    surrender[1] = ~~((deposit - items[selected - 1].price) % 10 % 5 % 2 / 1);
   };
 
   return __jsx("div", {
@@ -734,6 +738,7 @@ function Index() {
     setDeposit: setDeposit,
     deposit: deposit,
     purchased: purchased,
+    items: items,
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -746,7 +751,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70,
+      lineNumber: 71,
       columnNumber: 9
     }
   })));
@@ -754,7 +759,7 @@ function Index() {
 
 /***/ }),
 
-/***/ 1:
+/***/ 2:
 /*!*************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Ftema%2Fmachine%2Fpages%2Findex.js ***!
   \*************************************************************************************************************/
@@ -777,5 +782,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

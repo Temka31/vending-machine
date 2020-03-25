@@ -40,7 +40,7 @@ export default function Index() {
   const [purchasedItem, setpurchasedItem] = useState("");
 
   const purchased = selected => {
-    if (items[selected - 1].price <= deposit) {
+    // if (items[selected - 1].price <= deposit) {
       setpurchasedItem(items[selected - 1]);
       surrender[10] = ~~((deposit - items[selected - 1].price) / 10);
       surrender[5] = ~~(((deposit - items[selected - 1].price) % 10) / 5);
@@ -52,7 +52,7 @@ export default function Index() {
         ((((deposit - items[selected - 1].price) % 10) % 5) % 2) /
         1
       );
-    }
+    
   };
 
   return (
@@ -65,6 +65,7 @@ export default function Index() {
           setDeposit={setDeposit}
           deposit={deposit}
           purchased={purchased}
+          items={items}
         />
 
         <Surrender surrender={surrender} item={purchasedItem} />

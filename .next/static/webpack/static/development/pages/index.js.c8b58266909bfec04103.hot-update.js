@@ -91,13 +91,12 @@ function Index() {
       setpurchasedItem = _useState2[1];
 
   var purchased = function purchased(selected) {
-    if (items[selected - 1].price <= deposit) {
-      setpurchasedItem(items[selected - 1]);
-      surrender[10] = ~~((deposit - items[selected - 1].price) / 10);
-      surrender[5] = ~~((deposit - items[selected - 1].price) % 10 / 5);
-      surrender[2] = ~~((deposit - items[selected - 1].price) % 10 % 5 / 2);
-      surrender[1] = ~~((deposit - items[selected - 1].price) % 10 % 5 % 2 / 1);
-    }
+    // if (items[selected - 1].price <= deposit) {
+    setpurchasedItem(items[selected - 1]);
+    surrender[10] = ~~((deposit - items[selected - 1].price) / 10);
+    surrender[5] = ~~((deposit - items[selected - 1].price) % 10 / 5);
+    surrender[2] = ~~((deposit - items[selected - 1].price) % 10 % 5 / 2);
+    surrender[1] = ~~((deposit - items[selected - 1].price) % 10 % 5 % 2 / 1);
   };
 
   return __jsx("div", {
@@ -137,6 +136,7 @@ function Index() {
     setDeposit: setDeposit,
     deposit: deposit,
     purchased: purchased,
+    items: items,
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -149,7 +149,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70,
+      lineNumber: 71,
       columnNumber: 9
     }
   })));
@@ -158,4 +158,4 @@ function Index() {
 /***/ })
 
 })
-//# sourceMappingURL=index.js.b8012b6b909b3aa97a30.hot-update.js.map
+//# sourceMappingURL=index.js.c8b58266909bfec04103.hot-update.js.map

@@ -42,7 +42,7 @@ const styles = {
     lineHeight: "1.5rem"
   }
 };
-export default function ControlPanel({ setDeposit, setSelected, purchased }) {
+export default function ControlPanel({ setDeposit, setSelected, deposit, items, purchased }) {
   const [dep, setDep] = useState("");
   const [sel, setSel] = useState("");
   const [message, setMessage] = useState("Insert banknotes...");
@@ -60,13 +60,16 @@ export default function ControlPanel({ setDeposit, setSelected, purchased }) {
   };
 
   const handleSubmitSelected = event => {
-    if (sel < 8 && sel > 0) {
-      purchased(sel);
-      setMessageTwo("Success!");
-    } else {
-      setMessageTwo("Enter the correct number!");
-    }
     event.preventDefault();
+    if (sel < 8 && sel > 0 && deposit>=items[sel - 1].price) {
+      purchased(sel);
+      setMessageTwo("Success!");}
+      else{
+      if (sel < 8 && sel > 0)
+      {setMessageTwo("Не хватает денег!")}
+   else{
+      setMessageTwo("Enter the correct number!");
+    }}
   };
 
   const handleChangeDep = event => {
@@ -100,6 +103,7 @@ export default function ControlPanel({ setDeposit, setSelected, purchased }) {
         <label style={styles.label}>{messageTwo}</label>
         <br />
         <input
+          disabled={deposit>0?"":"disabled"}
           style={styles.finput}
           type="text"
           value={sel}
